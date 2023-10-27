@@ -1,0 +1,37 @@
+python manage.py shell    //abre el entorno de python dentro de la consola
+
+crear entorno virtual
+python -m venv [nombre-proyecto]
+cd nombre-projec
+. scripts/activate
+. scripts/deactivate  //desactivar
+
+cd root
+pip install django
+
+********************AÑADIR BOOTSTRAP A DJANGO*************
+Scripts\activate.bat
+pip install django-bootstrap-v5
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'members',
+    'bootstrap5',
+]
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+*************CONEXION CON FREESQL*******************************
+Host: sql10.freesqldatabase.com
+Database name: sql10656022
+Database user: sql10656022
+Database password: g3CHmYMPrg
+Port number: 3306
+
+pip install mysqlclient
+python manage.py makemigrations
+python manage.py migrate

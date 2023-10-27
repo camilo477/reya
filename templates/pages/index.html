@@ -1,0 +1,56 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% block title %}Principal{% endblock %}
+{% block content %}
+<div class="home">
+  <section class="h-100 gradient-form" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+          <div class="card rounded-3 text-black">
+            <div class="row g-0">
+              <div class="col-lg-6">
+                <div class="card-body p-md-5 mx-md-4">
+                  <div class="text-center">
+                    <img src="static/assets/reya.jpg" style="width: 185px;" alt="logo">
+                    <h4 class="mt-1 mb-5 pb-1">Genera tu receta ya</h4>
+                  </div>
+
+                  <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form2Example11" name="username" class="form-control" placeholder="Nombre de usuario" />
+                        <label class="form-label" for="form2Example11"></label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form2Example22" name="password" class="form-control" placeholder="Contraseña" />
+                    </div>
+                    <div class="text-center pt-1 mb-5 pb-1">
+                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Ingresar</button>
+                    </div>
+                </form>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">¿No tienes cuenta?</p>
+                    <a href="crear"><button type="button" class="btn btn-outline-danger">Créala ahora</button></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                  <h4 class="mb-4">RE YA</h4>
+                  <p class="small mb-0">¿Con hambre?, Re Ya ha llegado para ayudarte, no más domicilios caros,
+                    aprende a cocinar con lo que tienes a la mano, ¡no lo pienses más y vamos a cocinar!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

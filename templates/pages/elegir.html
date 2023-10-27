@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ejemplo Bootstrap - Webdisenia</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #febd59; /* Define el color de fondo naranja */
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="text-right">
+    <a href="{% url 'perfil' %}">
+      <button class="btn btn-primary">{{ request.user.email }}</button>
+    </a>
+    
+  </div>
+  <a href="{% url 'principal' %}" class="btn btn-primary">volver</a>
+  <h1>Elige la comida de la que deseas obtener una receta:</h1>
+  <div class="btn-group btn-group-justified">
+    <a href="{% url 'comida1' %}" class="btn btn-primary">Desayuno</a>
+    <a href="{% url 'comida2' %}" class="btn btn-primary">Almuerzo</a>
+    <a href="{% url 'comida3' %}" class="btn btn-primary">Cena</a>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
